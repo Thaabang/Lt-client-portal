@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('login');
+  this.route('sprints');
+  this.route('list');
+  this.route('add');
 });
 
 export default Router;
