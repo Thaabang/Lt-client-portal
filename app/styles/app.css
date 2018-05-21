@@ -100,20 +100,20 @@
 #home-box > h2 { 
     font-family: "Quicksand", sans-serif;
      font-weight: 400; line-height: 1.1; 
-     color: #75b1ae;
+     color: #010003;
      }
 .sprint_header {
-     background: none repeat scroll 0% 0% rgb(44, 62, 80); 
+     background: none repeat scroll 0% 0% rgb(6, 41, 77); 
      border-radius: 5px 5px 0px 0px; 
      transition: background 0.4s ease-out 0s; 
     }
 
 .sprint_header h2 {
       text-align:center;
-     line-height: 25px;
+     line-height: 20px;
      padding: 15px 0px;
      margin: 0px; font-family: "Quicksand", sans-serif; 
-     font-weight: 400; color: #75b1ae; 
+     font-weight: 300; color: #fefeff; 
     }
 
 .list-group-item:first-child { 
@@ -122,7 +122,41 @@
  }
 
 .space {height: 2px; 
-    background-color: #75b1ae;
+    background-color: #040707;
 }
 
+ /* Activities */
+
+ .actcontainer {
+    padding-top: 40px; 
+    max-width: 100%;
+    padding: 40px 40px;
+    
+   }
+
+.filterable {
+    margin-top: 20px;
+    color: #000;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -26px;
+    color:black
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
 
