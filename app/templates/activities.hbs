@@ -1,15 +1,15 @@
-<div class="act-container">
+<div class="container">
   <h3>Activities</h3>
   <div class="pull left">
 
-    {{#link-to 'activities.add' class='btn btn-default btn-sm'}} Add {{/link-to}}
   </div>
   <hr>
   <div class="row">
     <div class="panel panel-primary filterable">
       <div class="panel-heading">
-        <h3 class="panel-title">Filter by</h3>
+        <h3 class="panel-title">Filter by Name</h3>
         <div class="pull-right">
+          <button class="btn btn-default btn-new" onclick={{action 'new'}}>New Activity</button>
           <button class="btn btn-default btn-xs" {{action 'toggleFilters'}}>
             <span class="glyphicon glyphicon-filter"></span> Filter </button>
           <button class="btn btn-default btn-xs" {{action ''}}>
@@ -25,31 +25,69 @@
           {{#if filtersVisible}}
           <tr>
             <th>{{input type="checkbox" name="check" checked=true}}</th>
-            <th>{{input type="text" class="form-control" placeholder="Status"}}</th>
-            <th>{{input type="text" class="form-control" placeholder="Project"}}</th>
+            <th>{{input type="text" class="form-control" placeholder="Id"}}</th>
+            <th>{{input type="text" class="form-control" placeholder="type"}}</th>
             <th>{{input type="text" value=nameFilter class='form-control' placeholder='Name'}}</th>
+            <th>{{input type="text" class="form-control" placeholder="Status "}}</th>
+            <th>{{input type="text" class="form-control" placeholder="Project"}}</th>
             <th>{{input type="text" class="form-control" placeholder="Organisation"}}</th>
-            <th>{{input type="text" class="form-control" placeholder="Created"}}</th>
-            <th>{{input type="text" class="form-control" placeholder="due"}}</th>
-            <th>{{input type="text" class="form-control" placeholder="Person"}}</th>
+            <th>{{input type="text" class="form-control" placeholder="Ceeated"}}</th>
+            <th>{{input type="text" class="form-control" placeholder="deadline"}}</th>
+
+
           </tr>
           {{/if}}
         </thead>
         <tbody>
-          {{#each filteredActivities as |activity|}}
+          {{#each filteredActivities as |activity|}} 
+          {{#if (eq editing activity.id)}}
+
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td>{{input type='text' value=activity.type class='form-control'  placeholder="type"}}</td>
+            <td>{{input type='text' value=activity.name class='form-control' placeholder='Name'}}</td>
+            <td>{{input type='text' value=activity.status class='form-control'placeholder="Status "}}</td>
+            <td>{{input type='text' value=activity.project class='form-control' placeholder="Project"}}</td>
+            <td>{{input type='text' value=activity.organisation class='form-control'  placeholder="Organisation"}}</td>
+            <td>{{input type='text' value=activity.created class='form-control' placeholder="Ceeated"}}</td>
+            <td>{{input type='text' value=activity.deadline class='form-control' placeholder="deadline"}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <td>
+                  <button {{action 'save' activity}} class='btn btn-success'>Save</button>
+                  <button {{action 'cancel' activity}} class='btn btn-danger'>Cancel</button>
+                </td>
+              </div>
+            </td>
+
+
+          </tr>
+
+          {{else}}
           <tr>
             <td>{{input type='checkbox'}}</td>
-            <td>{{activity.status}}</td>
-            <td>{{activity.project.name}}</td>
+            <td>{{activity.id}}</td>
+            <td>{{activity.type}}</td>
             <td>{{activity.name}}</td>
+            <td>{{activity.status}}</td>
+            <td>{{activity.project}}</td>
             <td>{{activity.organisation}}</td>
-            <td>{{activity.created date}}</td>
-            <td>{{activity.End date}}</td>
+            <td>{{activity.created}}</td>
+            <td>{{activity.deadline}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button {{action "removeActivity" activity}} class="btn btn-danger glyphicon glyphicon-trash"></button>
+                <button {{action "edit" activity}} type="button" class="btn btn-warning glyphicon glyphicon-pencil"></button>
+              </div>
+            </td>
+
           </tr>
+          {{/if}} 
           {{/each}}
         </tbody>
       </table>
     </div>
   </div>
 </div>
-{{outlet}}

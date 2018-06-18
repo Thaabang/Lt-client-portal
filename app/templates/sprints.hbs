@@ -1,22 +1,85 @@
 <div class="container">
-<div class="col-md-3" id="home-box">
-    <div class="sprint_header">
-        <h2>Sprints</h2>
-        <div class="space"></div>
+    <div class="col-md-3" id="home-box">
+        <div class="sprint_header">
+            <h2>Sprints</h2>
+            <div class="space"></div>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-ok "></span> Task 1</li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-ok "></span> Task 2</li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-ok "></span> Task 3</li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-ok "></span> Task 4</li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-ok "></span> Task 5</li>
+            <li class="list-group-item">
+                <span class="glyphicon glyphicon-ok "></span> Task 6</li>
+        </ul>
     </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-ok "></span> Task 1</li>
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-ok "></span> Task 2</li>
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-ok "></span> Task 3</li>
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-ok "></span> Task 4</li>
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-ok "></span> Task 5</li>
-        <li class="list-group-item">
-            <span class="glyphicon glyphicon-ok "></span> Task 6</li>
-    </ul>
 </div>
+
+<div class="col-md-10 col-md-offset-1">
+
+    <div class="panel panel-default panel-table">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col col-xs-6">
+                    <h3 class="panel-title">Backlog</h3>
+                </div>
+                <div class="col col-xs-6 text-right">
+                    <button class="btn btn-default btn-new" onclick={{action 'new'}}>New</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-list">
+                <thead>
+                    <tr>
+                        <th class="hidden-xs">ID</th>
+                        <th>Name</th>
+                        <th>Task</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each model as |backlog|}}
+                    {{#if (eq editing backlog.id)}}
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            {{input type='text' value=backlog.name class='form-control'}}
+                        </td>
+                        <td>
+                            {{input type='text' value=backlog.task class='form-control'}}
+                        </td>
+                        <td>
+                            <button {{action 'save' backlog}} class='btn btn-success'>Save</button>
+                            <button {{action 'cancel' backlog}} class='btn btn-danger'>Cancel</button>
+                        </td>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td class="hidden-xs">{{backlog.id}}</td>
+                        <td>{{backlog.name}}</td>
+                        <td>{{backlog.task}}</td>
+                          <td>
+                          <div class="btn-group" role="group" aria-label="Basic example">
+                            <button  {{action "removeBacklog" backlog}} class="btn btn-danger glyphicon glyphicon-trash"></button>
+                            <button  {{action "edit" backlog}} type="button" class="btn btn-warning glyphicon glyphicon-pencil"></button> 
+                        </div>
+                          </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
+
+
