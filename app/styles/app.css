@@ -53,55 +53,13 @@
     min-height: 1em;
 }
 
-.reauth-email {
-    display: block;
-    color: #404040;
-    line-height: 2;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
-.form-signin #inputEmail,
-.form-signin #inputPassword {
-    direction: ltr;
-    height: 44px;
-    font-size: 16px;
-}
-
-.form-signin input[type=email],
-.form-signin input[type=password],
-.form-signin input[type=text],
-.form-signin button {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 .container {
     padding-top: 40px; 
-    float: left;
+   
     }
-#details { 
-    font-family: "Quicksand", sans-serif;
-     font-size: 60px; 
-    }
-#home-box > h2 { 
-    font-family: "Quicksand", sans-serif;
-     font-weight: 400; line-height: 1.1; 
-     color: #010003;
-     }
+
 .sprint_header {
      background: none repeat scroll 0% 0% rgb(6, 41, 77); 
      border-radius: 5px 5px 0px 0px; 
@@ -127,39 +85,10 @@
 
  /* Activities */
 
- .act-container {
-    padding-top: 40px; 
-   
-    padding: 40px 40px;
-    
-   }
-
-.filterable {
-    margin-top: 20px;
-    color: #000;
-}
 .filterable .panel-heading .pull-right {
     margin-top: -26px;
     color:black
 }
-.filterable .filters input[disabled] {
-    background-color: transparent;
-    border: none;
-    cursor: auto;
-    box-shadow: none;
-    padding: 0;
-    height: auto;
-}
-.filterable .filters input[disabled]::-webkit-input-placeholder {
-    color: #333;
-}
-.filterable .filters input[disabled]::-moz-placeholder {
-    color: #333;
-}
-.filterable .filters input[disabled]:-ms-input-placeholder {
-    color: #333;
-}
 
-.form-add {
-    float: left;
-}
+
+

@@ -1,5 +1,24 @@
 export default function() {
-  this.resource('user');
+
+  
+  
+    // this.get('/activities');
+    // this.get('/activities/:id');
+    // this.post('/activities/');
+    // this.put('/activities/:id');
+    // this.patch('/activities/:id');
+    // this.del('/activities/:id');
+
+
+    
+    // this.get('/activities', (schema, /*request*/ ) => {
+    //   // we can share the same route definitions in both development and testing
+    //   // while still having control over their response data
+    //   return schema.activities.all();
+   
+    // });
+
+    
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
@@ -23,4 +42,11 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
+
+  
+/*  this.urlPrefix = 'http://localhost:3000';*/
+ this.namespace = '/api'; 
+
+  this.get('/backlogs');
+  this.get('/people'); 
 }

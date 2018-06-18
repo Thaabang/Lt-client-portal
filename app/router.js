@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('activities', function() {
     this.route('add');
   });
+  this.route('rentals');
 });
 
 export default Router;

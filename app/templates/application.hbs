@@ -4,12 +4,13 @@
       <a class="navbar-brand" href="#">LT-CLient-Portal</a>
     </div>
     <ul class="nav navbar-nav">
-     <li>{{#link-to 'login'}} Login {{/link-to}}</li> 
       <li>{{#link-to 'sprints'}}Sprints{{/link-to}}</li>
       <li>{{#link-to 'activities'}}Activites{{/link-to}}</li>     
     </ul>
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
+    </ul>
   </div>
 </nav>
-
-
 {{outlet}}
