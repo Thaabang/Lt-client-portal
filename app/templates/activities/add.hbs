@@ -1,0 +1,47 @@
+<div class="container">
+    
+    <form>
+        <div class="col-md-6 form-line">
+            <div class="form-group">
+                <label for="type">Preson</label>
+                <input type="text" class="form-control" id="type" placeholder="Type">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input type="text" class="form-control" id="status" placeholder="Status">
+            </div>
+            <div class="form-group">
+                <label for="project">Project</label>
+                <input type="text" class="form-control" id="project" placeholder="Project">
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="organisation">Organisation</label>
+                <input type="text" class="form-control" id="organisation" placeholder="Organisation">
+            </div>
+            <div class="form-group">
+                <label for="created">Created</label>
+                <input type="date" class="form-control" id="created" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="deadline">Deadline</label>
+                <input type="date" class="form-control" id="deadline" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Save</button>
+                    {{#link-to 'activities' class='btn btn-default btn-sm'}} Remove {{/link-to}}
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
