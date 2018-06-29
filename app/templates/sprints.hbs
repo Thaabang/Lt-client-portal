@@ -22,7 +22,6 @@
 </div>
 
 <div class="col-md-10 col-md-offset-1">
-
     <div class="panel panel-default panel-table">
         <div class="panel-heading">
             <div class="row">
@@ -44,9 +43,10 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+               <tbody>
                     {{#each model as |backlog|}}
                     {{#if (eq editing backlog.id)}}
+                      {{#draggable-object content=backlog}}
                     <tr>
                         <td>
                         </td>
@@ -60,7 +60,8 @@
                             <button {{action 'save' backlog}} class='btn btn-success'>Save</button>
                             <button {{action 'cancel' backlog}} class='btn btn-danger'>Cancel</button>
                         </td>
-                    </tr>
+                    </tr> 
+                      {{/draggable-object}}
                     {{else}}
                     <tr>
                         <td class="hidden-xs">{{backlog.id}}</td>
