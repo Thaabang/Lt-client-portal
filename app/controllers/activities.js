@@ -4,13 +4,13 @@ import { computed } from '@ember/object';
 
 export default Controller.extend({
   filtersVisible: false,
-  filteredActivities: computed('model', 'nameFilter', function () {
-    if (this.get('nameFilter') === undefined) {
+  filteredActivities: computed('model', 'filter', function () {
+    if (this.get('filter') === undefined) {
       return this.get('model')
     }
 
     return this.get('model').filter(activity => {
-      return activity.get('name').toLowerCase().match(this.get('nameFilter').toLowerCase());
+      return activity.get('name').toLowerCase().match(this.get('filter').toLowerCase());
     });
   }),
   actions: {
