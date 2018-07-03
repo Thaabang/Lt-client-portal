@@ -22,6 +22,7 @@
 </div>
 
 <div class="col-md-10 col-md-offset-1">
+
     <div class="panel panel-default panel-table">
         <div class="panel-heading">
             <div class="row">
@@ -43,33 +44,35 @@
                         <th></th>
                     </tr>
                 </thead>
-               <tbody>
+                <tbody>
                     {{#each model as |backlog|}}
-                     {{#if (eq editing backlog.id)}}
-                        
-                        <tr>
-                            <td></td>
-                                <td> {{input type='text' value=backlog.name class='form-control'}} </td>
-                                <td>{{input type='text' value=backlog.task class='form-control'}} </td>
-                                <td>
-                                    <button {{action 'save' backlog}} class='btn btn-success'>Save</button>
-                                    <button {{action 'cancel' backlog}} class='btn btn-danger'>Cancel</button>
-                            </td>
-                        </tr> 
-                      
+                    {{#if (eq editing backlog.id)}}
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            {{input type='text' value=backlog.name class='form-control'}}
+                        </td>
+                        <td>
+                            {{input type='text' value=backlog.task class='form-control'}}
+                        </td>
+                        <td>
+                            <button {{action 'save' backlog}} class='btn btn-success'>Save</button>
+                            <button {{action 'cancel' backlog}} class='btn btn-danger'>Cancel</button>
+                        </td>
+                    </tr>
                     {{else}}
-                    <tr>          
+                    <tr>
                         <td class="hidden-xs">{{backlog.id}}</td>
                         <td>{{backlog.name}}</td>
                         <td>{{backlog.task}}</td>
-                         
                           <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
                             <button  {{action "removeBacklog" backlog}} class="btn btn-danger glyphicon glyphicon-trash"></button>
                             <button  {{action "edit" backlog}} type="button" class="btn btn-warning glyphicon glyphicon-pencil"></button> 
                         </div>
                           </td>
-                    </tr>      
+                    </tr>
                     {{/if}}
                     {{/each}}
                 </tbody>
