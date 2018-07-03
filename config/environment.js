@@ -23,6 +23,23 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token',
+    routeAfterAuthentication: 'index',
+    store: 'ember-simple-auth-session-store:local-storage',
+    tokenEndpoint: 'auth/login'
+  };
+  
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: '/api/users/login',
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'id',
+    refreshLeeway: 300 // refresh 5 minutes (300 seconds) before expiration
+  };
+
+ 
+
 
   if (environment === 'development') {
     ENV['ember-cli-mirage'] = {

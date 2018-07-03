@@ -2,10 +2,10 @@
         <div class="card card-container">
            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin"  {{action "authenticate" on="submit"}}>
+            <form class="form-signin"  {{action 'authenticate' on='submit'}}>
                 <span id="reauth-email" class="reauth-email"></span>
-                {{input type="email" id=inputEmail class="form-control" placeholder="Email address" }}
-                {{input type="password" id=inputPassword class="form-control" placeholder="Password"}}
+                {{input type='email' id='email' class="form-control" placeholder="Email address" value=email}}
+                {{input type='password' id='Password' class="form-control" placeholder="Password" value=password}}
               
                 <div id="remember" class="checkbox">
                     <label>

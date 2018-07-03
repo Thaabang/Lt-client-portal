@@ -28,12 +28,17 @@ export default function() {
 
   
 /*  this.urlPrefix = 'http://localhost:3000';*/
- this.namespace = '/api'; 
-
-
-    this.resource('backlogs');
-    this.resource('people');
-    this.resource('activities');
+  this.namespace = '/api';
+  this.resource('backlogs');
+  this.resource('people');
+  this.resource('activities');
      
-    
+  this.post('/users/login', function() {
+    return {
+      id: 'chgyWRTWXCTLKJKa56suig1848efbhjhy128RTESS9Jy',
+      ttl: 1209600,
+      created: '03-07-2018',
+      userId: 1
+    };
+  });
 }
