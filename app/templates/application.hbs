@@ -8,8 +8,12 @@
       <li>{{#link-to 'activities'}}Activites{{/link-to}}</li>     
     </ul>
      <ul class="nav navbar-nav navbar-right">
-      <li><a href="login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
+       {{log session}}
+       {{#unless session.isAuthenticated}}
+        {{#link-to "login" tagName="li"}}<a href="#"><span class="glyphicon glyphicon-user"></span>Login</a>{{/link-to}}
+      {{else}}
+        <li><a href="#" {{action "invalidateSession"}}><span class="glyphicon glyphicon-log-out"></span>Logout </a></li>
+      {{/unless}}
     </ul>
   </div>
 </nav>
